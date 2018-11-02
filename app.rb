@@ -10,11 +10,11 @@ class App
 
   private
 
-  def request_valid?
+  def time_request_valid?
     @request.get? && @request.path_info == '/time' && @params['format']
   end
 
-  def time_handler
+  def time_response
     time_format = TimeFormat.new(@params)
 
     if time_format.valid?
