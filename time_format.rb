@@ -8,7 +8,7 @@ class TimeFormat
     'second' => '%S'
   }.freeze
 
-  attr_reader :valid, :invalid
+  attr_reader :invalid
 
   def initialize(params)
     @valid = []

@@ -25,10 +25,10 @@ class App
   end
 
   def response(status, body)
-    @response = Rack::Response.new
-    @response.status = status
-    @response.write body.to_s
-    @response.add_header('Content-Type', 'text/plain')
-    @response.finish
+    response = Rack::Response.new
+    response.status = status
+    response.write body.to_s
+    response.add_header('Content-Type', 'text/plain')
+    response.finish
   end
 end
