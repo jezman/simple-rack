@@ -5,7 +5,7 @@ class App
     @request = Rack::Request.new(env)
     @params = @request.params
 
-    request_valid? ? time_handler : response(404, 'invalid request')
+    time_request_valid? ? time_response : response(404, 'invalid request')
   end
 
   private
