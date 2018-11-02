@@ -5,16 +5,16 @@ class App
     @request = Rack::Request.new(env)
     @params = @request.params
 
-    request_valid? ? time_handler : response(404, 'invalid request')
+    time_request_valid? ? time_response : response(404, 'invalid request')
   end
 
   private
 
-  def request_valid?
+  def time_request_valid?
     @request.get? && @request.path_info == '/time' && @params['format']
   end
 
-  def time_handler
+  def time_response
     time_format = TimeFormat.new(@params)
 
     if time_format.valid?

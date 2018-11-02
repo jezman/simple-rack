@@ -19,7 +19,7 @@ class TimeFormat
   end
 
   def call
-    p Time.now.strftime(@valid.join('-'))
+    Time.now.strftime(@valid.join('-'))
   end
 
   def valid?
